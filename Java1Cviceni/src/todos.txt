@@ -1,0 +1,10 @@
+1::Ahoj po nekolikate
+2::Nove ToDo
+3::Finish C# Gates :[
+7::Ahoj po nekolikate
+7::Ahoj po nekolikate
+7::Ahoj po nekolikate
+7::Ahoj po nekolikate
+7::Ahoj po nekolikate
+11::Ahoj po nekolikate
+11::Ahoj po nekolikate

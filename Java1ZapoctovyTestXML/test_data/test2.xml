@@ -1,0 +1,17 @@
+<div>
+	<pre>
+		JPanel pane = new JPanel(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+
+	<em>
+		//For each component to be added to this container:
+	</em>
+	<em>
+		//...Create the component...
+	</em>
+	<em>
+		//...Set instance variables in the GridBagConstraints instance...
+	</em>
+	pane.add(theComponent, c);
+	</pre>
+</div>

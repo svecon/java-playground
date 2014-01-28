@@ -1,0 +1,3 @@
+#ID;jmeno;prijmeni;narozeni;bydliste
+5029;Svec;Ondrej;11.11.1111;Praha
+1;Namorik;Pepek;11.01.1111;Brno

@@ -1,0 +1,18 @@
+<Root>
+	<Child1>
+		<Value1>
+			Hello
+		</Value1>
+		<Value2>
+			World
+		</Value2>
+	</Child1>
+	<Child2>
+		Text
+		<Element>Bagr</Element><Element>a</Element>
+		Other Text
+		<Element>Bugr</Element><Element>b</Element>
+	</Child2>
+	<Child1>
+	</Child1>
+</Root>
