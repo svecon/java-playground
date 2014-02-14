@@ -1,21 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package vyukanasobilky;
+package calculus.listeners;
 
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import calculus.Settings;
 
 /**
+ * Listener for Slider. Updates Settings object.
  *
  * @author svecon
  */
 public class ChangeListenerSettingsSlider implements ChangeListener {
 
+    /**
+     * Key-value pair
+     */
     String key;
+    /**
+     * Setting wrapper object for storing key-value pairs
+     */
     Settings settings;
 
     public ChangeListenerSettingsSlider(String key, Settings settings) {
@@ -29,8 +32,6 @@ public class ChangeListenerSettingsSlider implements ChangeListener {
         if (source.getValueIsAdjusting()) {
             return;
         }
-        
-        Debugger.log(key + ": " + (int) source.getValue());
 
         settings.set(key, (int) source.getValue());
     }

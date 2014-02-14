@@ -1,20 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package vyukanasobilky;
+package calculus;
 
 /**
+ * Simplistic debugger that was used for testing ActionListeners
  *
  * @author svecon
  */
 public class Debugger {
 
+    /**
+     * Manual switch for debugger
+     *
+     * @return true/false
+     */
     public static boolean isEnabled() {
         return true;
     }
 
+    /**
+     * Logging messages to standard output
+     *
+     * @param o Object to log
+     */
     public static void log(Object o) {
         if (Debugger.isEnabled()) {
             System.out.println(o.toString());

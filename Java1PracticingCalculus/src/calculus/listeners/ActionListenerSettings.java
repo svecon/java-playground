@@ -1,23 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package vyukanasobilky;
+package calculus.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
+import calculus.Settings;
 
 /**
+ * Listener for radio buttons and text boxes. Auto updates values to Settings
+ * variable.
  *
  * @author svecon
  */
 public class ActionListenerSettings implements ActionListener {
 
+    /**
+     * Value used when radio button is selected
+     */
     int value;
+    /**
+     * Key-value pair
+     */
     String key;
+    /**
+     * Setting wrapper object for storing key-value pairs
+     */
     Settings settings;
+    /**
+     * Auto-update text field when radio is selected
+     */
     JTextField textField;
 
     public ActionListenerSettings(int value, String key, Settings settings, JTextField textField) {
@@ -29,16 +39,10 @@ public class ActionListenerSettings implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        update(value);
-    }
-
-    protected void update(int value) {
         if (value == -1) {
             textField.setEnabled(true);
             return;
         }
-        
-        Debugger.log(key + ":: " + value);
 
         settings.set(key, value);
         textField.setText(value + "");

@@ -1,34 +1,78 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * This program has been developed to help children in primary school exercise
+ * their division and multiplication skills.
+ *
+ * This program features: - division exercise - multiplication exercise -
+ * settings for however high or customised numbers so children may specify their
+ * ability level - results page where children may see their success rate and
+ * more
+ *
  */
-package vyukanasobilky;
+/**
+ * Basic package containing executable JFrame, one Jpanel for multiplication and
+ * one for division
+ *
+ * @version 1.0.0
+ * @author Ondřej Švec
+ */
+package calculus;
 
+import calculus.listeners.ActionListenerChangeCard;
+import calculus.listeners.ChangeListenerSettingsSlider;
+import calculus.listeners.ActionListenerSettings;
+import calculus.listeners.DocumentListenerSettingsText;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import javax.swing.*;
 
 /**
+ * Main application JFrame
  *
  * @author svecon
  */
-public class VyukaNasobilky extends JFrame {
+public class Calculus extends JFrame {
 
+    /**
+     * Container with CardsLayout
+     */
     final private Container container;
 
-    private final String CardAbout = "cardabout";
-    private final String CardStartScreen = "cardstartscreen";
-    private final String CardSettingsDivision = "cardsettingsdivision";
-    private final String CardSettingsMultiplication = "cardsettingsmultiplication";
-    private final String CardDivision = "carddivision";
-    private final String CardMultiplication = "cardmultiplication";
+    /**
+     * Card constant for About page
+     */
+    public static final String CardAbout = "cardabout";
+    /**
+     * Card constant for StartScreen page
+     */
+    public static final String CardStartScreen = "cardstartscreen";
+    /**
+     * Card constant for Settings of Division page
+     */
+    public static final String CardSettingsDivision = "cardsettingsdivision";
+    /**
+     * Card constant for Settings of Multiplication page
+     */
+    public static final String CardSettingsMultiplication = "cardsettingsmultiplication";
+    /**
+     * Card constant for Division page
+     */
+    public static final String CardDivision = "carddivision";
+    /**
+     * Card constant for Multiplication page
+     */
+    public static final String CardMultiplication = "cardmultiplication";
 
-    public VyukaNasobilky() {
+    /**
+     * Constructor - creates a default program window
+     */
+    public Calculus() {
         super("Výuka násobení a dělení");
+
+        ImageIcon icon = new ImageIcon(getClass().getResource("divide-icon.png"));
+        setIconImage(icon.getImage());
 
         container = this.getContentPane();
 
@@ -40,6 +84,9 @@ public class VyukaNasobilky extends JFrame {
         createAndShowGUI();
     }
 
+    /**
+     * Creates all menus, buttons and setting radios
+     */
     private void createAndShowGUI() {
         /**
          * MENUBAR
@@ -69,6 +116,12 @@ public class VyukaNasobilky extends JFrame {
         });
         menuQuit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
 
+        Font fMenu = menuStart.getFont().deriveFont(17f);
+        menuStart.setFont(fMenu);
+        menuNewGame.setFont(fMenu);
+        menuAbout.setFont(fMenu);
+        menuQuit.setFont(fMenu);
+
         this.setJMenuBar(menuBar);
 
         /**
@@ -82,6 +135,10 @@ public class VyukaNasobilky extends JFrame {
         JButton bStartMultiplication = new JButton("Násobení");
         pStartScreen.add(bStartMultiplication, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(25, 0, 25, 0), 25, 50));
         bStartMultiplication.addActionListener(new ActionListenerChangeCard(container, CardSettingsMultiplication));
+
+        Font fButton = bStartDivision.getFont().deriveFont(17f);
+        bStartDivision.setFont(fButton);
+        bStartMultiplication.setFont(fButton);
 
         container.add(pStartScreen, CardStartScreen);
 
@@ -103,12 +160,18 @@ public class VyukaNasobilky extends JFrame {
         JTextField tfCustom = new JTextField();
 
         JPanel pMultiplication = new JPanel();
-        JRadioButton chmUnits = new JRadioButton();
+        JLabel lmFactor = new JLabel();
+        JRadioButton chmMilions = new JRadioButton();
         JRadioButton chmTens = new JRadioButton();
         JRadioButton chmThousands = new JRadioButton();
         JRadioButton chmHundreds = new JRadioButton();
         JRadioButton chmCustom = new JRadioButton();
         JTextField tmCustom = new JTextField();
+        JRadioButton chmmUnits = new JRadioButton();
+        JRadioButton chmmTens = new JRadioButton();
+        JRadioButton chmmHundreds = new JRadioButton();
+        JRadioButton chmmCustom = new JRadioButton();
+        JTextField tmmCustom = new JTextField();
 
         Settings settingsDivision = new Settings(Settings.DIVISION);
         Settings settingsMultiplication = new Settings(Settings.MULTIPLICATION);
@@ -117,14 +180,14 @@ public class VyukaNasobilky extends JFrame {
          * DIVISION SETTINGS
          */
         pDivision.setLayout(new GridBagLayout());
-        
-        final DivisionPanel dpanel = new DivisionPanel(settingsDivision);
+
+        final DivisionPanel dpanel = new DivisionPanel(container, settingsDivision);
         container.add(dpanel, CardDivision);
 
         JLabel ldNumberOfExcercises = new JLabel("Počet příkladů");
         pDivision.add(ldNumberOfExcercises, Helper.gbc(0, 0, 1));
 
-        JSlider sldNumberOfExcercises = new JSlider(JSlider.HORIZONTAL, 5, 30, 15);
+        JSlider sldNumberOfExcercises = new JSlider(JSlider.HORIZONTAL, 0, 30, 15);
         sldNumberOfExcercises.setMajorTickSpacing(5);
         sldNumberOfExcercises.setMinorTickSpacing(1);
         sldNumberOfExcercises.setPaintTicks(true);
@@ -185,16 +248,33 @@ public class VyukaNasobilky extends JFrame {
         bgfSize.add(chfTens);
         bgfSize.add(chfCustom);
 
-        JButton bdStart = new JButton("Spustit");
+        JButton bdStart = new JButton("Spustit dělení");
+        bdStart.setFont(fButton);
         bdStart.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 ((CardLayout) container.getLayout()).show(container, CardDivision);
-                dpanel.initialize();
+                dpanel.reset();
             }
         });
         pDivision.add(bdStart, Helper.gbc(0, 9, 2, GridBagConstraints.BOTH, GridBagConstraints.LINE_START, new Insets(25, 0, 0, 0)));
+
+        Font fLabel = lDivident.getFont().deriveFont(16f);
+        lDivident.setFont(fLabel);
+        lFactor.setFont(fLabel);
+        ldNumberOfExcercises.setFont(fLabel);
+
+        Font fRadio = chdTens.getFont().deriveFont(14f);
+        chdTens.setFont(fRadio);
+        chdHundreds.setFont(fRadio);
+        chdThousands.setFont(fRadio);
+        chdMillions.setFont(fRadio);
+        chdCustom.setFont(fRadio);
+
+        chfUnits.setFont(fRadio);
+        chfTens.setFont(fRadio);
+        chfCustom.setFont(fRadio);
 
         container.add(pDivision, CardSettingsDivision);
 
@@ -203,10 +283,14 @@ public class VyukaNasobilky extends JFrame {
          */
         pMultiplication.setLayout(new java.awt.GridBagLayout());
 
+        final MultiplicationPanel mpanel = new MultiplicationPanel(container, settingsMultiplication);
+        container.add(mpanel, CardMultiplication);
+
         JLabel lmNumberOfExcercises = new JLabel("Počet příkladů");
+        lmNumberOfExcercises.setFont(fLabel);
         pMultiplication.add(lmNumberOfExcercises, Helper.gbc(0, 0, 1));
 
-        JSlider slmNumberOfExcercises = new JSlider(JSlider.HORIZONTAL, 5, 30, 15);
+        JSlider slmNumberOfExcercises = new JSlider(JSlider.HORIZONTAL, 0, 30, 15);
         slmNumberOfExcercises.setMajorTickSpacing(5);
         slmNumberOfExcercises.setMinorTickSpacing(1);
         slmNumberOfExcercises.setPaintTicks(true);
@@ -216,35 +300,82 @@ public class VyukaNasobilky extends JFrame {
         pMultiplication.add(slmNumberOfExcercises, Helper.gbc(0, 1, 2));
 
         ButtonGroup bgmSize = new ButtonGroup();
-        chmUnits.setText("Jednotky");
-        chmUnits.setSelected(true);
-        chmUnits.addActionListener(new ActionListenerSettings(9, "multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(chmUnits, Helper.gbc(0, 3, 2));
+        lmFactor.setText("Činitelé");
+        lmFactor.setFont(fLabel);
+        pMultiplication.add(lmFactor, Helper.gbc(0, 2));
         chmTens.setText("Desítky");
+        chmTens.setSelected(true);
         chmTens.addActionListener(new ActionListenerSettings(99, "multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(chmTens, Helper.gbc(0, 4, 2));
+        pMultiplication.add(chmTens, Helper.gbc(0, 3));
         chmHundreds.setText("Stovky");
         chmHundreds.addActionListener(new ActionListenerSettings(999, "multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(chmHundreds, Helper.gbc(0, 5, 2));
+        pMultiplication.add(chmHundreds, Helper.gbc(0, 4));
         chmThousands.setText("Tisíce");
         chmThousands.addActionListener(new ActionListenerSettings(9999, "multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(chmThousands, Helper.gbc(0, 6, 2));
+        pMultiplication.add(chmThousands, Helper.gbc(0, 5));
+        chmMilions.setText("Miliony");
+        chmMilions.addActionListener(new ActionListenerSettings(99999999, "multiple", settingsMultiplication, tmCustom));
+        pMultiplication.add(chmMilions, Helper.gbc(0, 6));
         chmCustom.setText("Vlastní");
         chmCustom.addActionListener(new ActionListenerSettings(-1, "multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(chmCustom, Helper.gbc(0, 7, 2));
+        pMultiplication.add(chmCustom, Helper.gbc(0, 7));
         tmCustom.setText("9");
         tmCustom.setEnabled(false);
         tmCustom.setPreferredSize(new Dimension(100, 25));
         tmCustom.getDocument().addDocumentListener(new DocumentListenerSettingsText("multiple", settingsMultiplication, tmCustom));
-        pMultiplication.add(tmCustom, Helper.gbc(0, 8, 2, GridBagConstraints.NONE, GridBagConstraints.LINE_START, new Insets(0, 0, 0, 75)));
-        bgmSize.add(chmUnits);
+        pMultiplication.add(tmCustom, Helper.gbc(0, 8, 1, GridBagConstraints.NONE, GridBagConstraints.LINE_START, new Insets(0, 0, 0, 75)));
+        bgmSize.add(chmMilions);
         bgmSize.add(chmTens);
         bgmSize.add(chmHundreds);
         bgmSize.add(chmThousands);
         bgmSize.add(chmCustom);
 
-        JButton bmStart = new JButton("Spustit");
+        ButtonGroup bgmmSize = new ButtonGroup();
+        chmmUnits.setText("Jednotky");
+        chmmUnits.setSelected(true);
+        chmmUnits.addActionListener(new ActionListenerSettings(9, "multiplebottom", settingsMultiplication, tmmCustom));
+        pMultiplication.add(chmmUnits, Helper.gbc(1, 3));
+        chmmTens.setText("Desítky");
+        chmmTens.addActionListener(new ActionListenerSettings(99, "multiplebottom", settingsMultiplication, tmmCustom));
+        pMultiplication.add(chmmTens, Helper.gbc(1, 4));
+        chmmHundreds.setText("Stovky");
+        chmmHundreds.addActionListener(new ActionListenerSettings(999, "multiplebottom", settingsMultiplication, tmmCustom));
+        pMultiplication.add(chmmHundreds, Helper.gbc(1, 5));
+        chmmCustom.setText("Vlastní");
+        chmmCustom.addActionListener(new ActionListenerSettings(-1, "multiplebottom", settingsMultiplication, tmmCustom));
+        pMultiplication.add(chmmCustom, Helper.gbc(1, 7));
+        tmmCustom.setText("9");
+        tmmCustom.setEnabled(false);
+        tmmCustom.setPreferredSize(new Dimension(100, 25));
+        tmmCustom.getDocument().addDocumentListener(new DocumentListenerSettingsText("multiplebottom", settingsMultiplication, tmmCustom));
+        pMultiplication.add(tmmCustom, Helper.gbc(1, 8, 1, GridBagConstraints.NONE, GridBagConstraints.LINE_START, new Insets(0, 0, 0, 75)));
+        bgmmSize.add(chmmUnits);
+        bgmmSize.add(chmmTens);
+        bgmmSize.add(chmmHundreds);
+        bgmmSize.add(chmmCustom);
+
+        JButton bmStart = new JButton("Spustit násobení");
+        bmStart.setFont(fButton);
+        bmStart.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ((CardLayout) container.getLayout()).show(container, CardMultiplication);
+                mpanel.reset();
+            }
+        });
         pMultiplication.add(bmStart, Helper.gbc(0, 9, 2, GridBagConstraints.BOTH, GridBagConstraints.LINE_START, new Insets(25, 0, 0, 0)));
+
+        chmMilions.setFont(fRadio);
+        chmTens.setFont(fRadio);
+        chmHundreds.setFont(fRadio);
+        chmThousands.setFont(fRadio);
+        chmCustom.setFont(fRadio);
+
+        chmmUnits.setFont(fRadio);
+        chmmTens.setFont(fRadio);
+        chmmHundreds.setFont(fRadio);
+        chmmCustom.setFont(fRadio);
 
         container.add(pMultiplication, CardSettingsMultiplication);
 
@@ -279,12 +410,14 @@ public class VyukaNasobilky extends JFrame {
     }
 
     /**
-     * @param args the command line arguments
+     * Main method
+     *
+     * @param args Arguments from command line
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new VyukaNasobilky();
+                new Calculus();
             }
         });
     }

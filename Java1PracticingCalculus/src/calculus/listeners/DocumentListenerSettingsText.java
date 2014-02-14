@@ -1,22 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package vyukanasobilky;
+package calculus.listeners;
 
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import calculus.Settings;
 
 /**
+ * Listener for Text Field. Updates Settings object.
  *
  * @author svecon
  */
 public class DocumentListenerSettingsText implements DocumentListener {
 
+    /**
+     * Key-value pair
+     */
     String key;
+    /**
+     * Setting wrapper object for storing key-value pairs
+     */
     Settings settings;
+    /**
+     * Reference for given Text Field
+     */
     JTextField text;
 
     public DocumentListenerSettingsText(String key, Settings settings, JTextField text) {
@@ -33,7 +39,6 @@ public class DocumentListenerSettingsText implements DocumentListener {
             value = 9;
         }
 
-        Debugger.log(key + ": " + value);
         settings.set(key, value);
     }
 
