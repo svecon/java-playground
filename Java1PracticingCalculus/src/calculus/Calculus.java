@@ -9,11 +9,12 @@
  *
  */
 /**
- * Basic package containing executable JFrame, one Jpanel for multiplication and
+ * Basic package containing executable JFrame, one JPanel for multiplication and
  * one for division
  *
- * @version 1.0.0
  * @author Ondřej Švec
+ * @version 1.0.0
+ * @java JDK 7 or higher
  */
 package calculus;
 
