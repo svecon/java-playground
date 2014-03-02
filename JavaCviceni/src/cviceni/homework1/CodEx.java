@@ -1,4 +1,4 @@
-package calculator;
+package cviceni.homework1;
 
 /** INPUT
 3 + 2
