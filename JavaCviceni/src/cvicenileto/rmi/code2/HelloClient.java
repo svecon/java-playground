@@ -1,4 +1,4 @@
-package hello;
+package cvicenileto.rmi.code2;
 
 import java.rmi.*;
 

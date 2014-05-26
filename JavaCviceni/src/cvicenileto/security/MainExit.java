@@ -1,5 +1,5 @@
 /* $Id$ */
-
+package cvicenileto.security;
 import java.io.Console;
 
 public class MainExit {

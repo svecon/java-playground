@@ -1,5 +1,5 @@
 /* $Id$ */
-package hello;
+package cvicenileto.rmi.code4;
 
 import java.io.*;
 
