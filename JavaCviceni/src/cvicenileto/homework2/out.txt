@@ -1,0 +1,684 @@
+"neexistujici.JavaBean" does not exist
+
+JavaBean name: javax.swing.JComponent
+readonly bound property java.lang.String UIClassID
+readonly bound property javax.accessibility.AccessibleContext accessibleContext
+bound property javax.swing.ActionMap actionMap
+bound property float alignmentX
+bound property float alignmentY
+readonly bound property [Ljavax.swing.event.AncestorListener; ancestorListeners
+bound property boolean autoscrolls
+bound property java.awt.Color background
+readonly bound property java.awt.Component$BaselineResizeBehavior baselineResizeBehavior
+bound property javax.swing.border.Border border
+readonly bound property int componentCount
+bound property javax.swing.JPopupMenu componentPopupMenu
+readonly bound property [Ljava.awt.Component; components
+readonly bound property [Ljava.awt.event.ContainerListener; containerListeners
+bound property int debugGraphicsOptions
+bound property boolean doubleBuffered
+bound property boolean enabled
+bound property boolean focusCycleRoot
+bound property java.awt.FocusTraversalPolicy focusTraversalPolicy
+bound property boolean focusTraversalPolicyProvider
+readonly bound property boolean focusTraversalPolicySet
+bound property boolean focusable
+bound property java.awt.Font font
+bound property java.awt.Color foreground
+readonly bound property java.awt.Graphics graphics
+readonly bound property int height
+bound property boolean inheritsPopupMenu
+bound property javax.swing.InputVerifier inputVerifier
+readonly bound property java.awt.Insets insets
+bound property java.awt.LayoutManager layout
+readonly bound property boolean managingFocus
+bound property java.awt.Dimension maximumSize
+bound property java.awt.Dimension minimumSize
+bound property java.lang.String name
+bound property java.awt.Component nextFocusableComponent
+bound property boolean opaque
+readonly bound property boolean optimizedDrawingEnabled
+readonly bound property boolean paintingForPrint
+readonly bound property boolean paintingTile
+bound property java.awt.Dimension preferredSize
+readonly bound property [Ljavax.swing.KeyStroke; registeredKeyStrokes
+bound property boolean requestFocusEnabled
+readonly bound property javax.swing.JRootPane rootPane
+bound property java.lang.String toolTipText
+readonly bound property java.awt.Container topLevelAncestor
+bound property javax.swing.TransferHandler transferHandler
+readonly bound property boolean validateRoot
+bound property boolean verifyInputWhenFocusTarget
+readonly bound property [Ljava.beans.VetoableChangeListener; vetoableChangeListeners
+bound property boolean visible
+readonly bound property java.awt.Rectangle visibleRect
+readonly bound property int width
+readonly bound property int x
+readonly bound property int y
+listener java.awt.event.MouseWheelListener
+  mouseWheelMoved
+listener java.awt.event.MouseListener
+  mouseClicked
+  mouseEntered
+  mouseExited
+  mousePressed
+  mouseReleased
+listener java.awt.event.MouseMotionListener
+  mouseDragged
+  mouseMoved
+listener java.awt.event.ComponentListener
+  componentHidden
+  componentMoved
+  componentResized
+  componentShown
+listener java.awt.event.ContainerListener
+  componentAdded
+  componentRemoved
+listener java.awt.event.HierarchyBoundsListener
+  ancestorMoved
+  ancestorResized
+listener java.awt.event.FocusListener
+  focusGained
+  focusLost
+listener java.awt.event.HierarchyListener
+  hierarchyChanged
+listener java.beans.PropertyChangeListener
+  propertyChange
+listener java.awt.event.InputMethodListener
+  caretPositionChanged
+  inputMethodTextChanged
+listener javax.swing.event.AncestorListener
+  ancestorMoved
+  ancestorAdded
+  ancestorRemoved
+listener java.awt.event.KeyListener
+  keyPressed
+  keyReleased
+  keyTyped
+listener java.beans.VetoableChangeListener
+  vetoableChange
+method removeFocusListener
+method setAlignmentY
+method getInputMethodRequests
+method resetKeyboardActions
+method setSize
+method grabFocus
+method addMouseMotionListener
+method hashCode
+method firePropertyChange
+method removeContainerListener
+method wait
+method isDoubleBuffered
+method getBounds
+method setAlignmentX
+method validate
+method imageUpdate
+method doLayout
+method setLocation
+method getTransferHandler
+method addMouseWheelListener
+method removeHierarchyListener
+method hide
+method nextFocus
+method addMouseListener
+method removeInputMethodListener
+method addFocusListener
+method remove
+method getBackground
+method removePropertyChangeListener
+method getLocationOnScreen
+method enable
+method enableInputMethods
+method getFocusCycleRootAncestor
+method wait
+method requestFocus
+method findComponentAt
+method isFocusable
+method revalidate
+method getFocusTraversalKeys
+method paintAll
+method registerKeyboardAction
+method getComponentAt
+method setComponentZOrder
+method setVerifyInputWhenFocusTarget
+method add
+method isShowing
+method minimumSize
+method getLocation
+method setLayout
+method isFontSet
+method isForegroundSet
+method setMinimumSize
+method prepareImage
+method setInheritsPopupMenu
+method gotFocus
+method setDebugGraphicsOptions
+method areFocusTraversalKeysSet
+method removeComponentListener
+method getInsets
+method setFocusTraversalPolicy
+method getToolTipLocation
+method getClass
+method registerKeyboardAction
+method createImage
+method getPeer
+method removeMouseMotionListener
+method invalidate
+method scrollRectToVisible
+method getPopupLocation
+method isFocusOwner
+method setComponentPopupMenu
+method getLayout
+method countComponents
+method getPreferredSize
+method printAll
+method removeMouseListener
+method getListeners
+method transferFocusBackward
+method setToolTipText
+method isMinimumSizeSet
+method getActionForKeyStroke
+method getBorder
+method getKeyListeners
+method paintComponents
+method getActionMap
+method getInputMethodListeners
+method setIgnoreRepaint
+method getMouseListeners
+method setOpaque
+method transferFocusUpCycle
+method isFocusTraversalPolicyProvider
+method setRequestFocusEnabled
+method addPropertyChangeListener
+method setBackground
+method setLocale
+method getColorModel
+method setLocation
+method createImage
+method getInsets
+method postEvent
+method removeVetoableChangeListener
+method mouseUp
+method size
+method bounds
+method repaint
+method mouseMove
+method createToolTip
+method add
+method repaint
+method isMaximumSizeSet
+method deliverEvent
+method setName
+method setMaximumSize
+method setBorder
+method addPropertyChangeListener
+method mouseDown
+method getConditionForKeyStroke
+method getInheritsPopupMenu
+method update
+method getAccessibleContext
+method isFocusTraversalPolicySet
+method setFocusTraversalPolicyProvider
+method getRegisteredKeyStrokes
+method isBackgroundSet
+method reshape
+method addInputMethodListener
+method remove
+method updateUI
+method getHeight
+method getComponentAt
+method setActionMap
+method dispatchEvent
+method getFocusTraversalPolicy
+method isManagingFocus
+method disable
+method setDoubleBuffered
+method getAutoscrolls
+method getMinimumSize
+method locate
+method getFocusListeners
+method setPreferredSize
+method applyComponentOrientation
+method addHierarchyListener
+method getTreeLock
+method setForeground
+method checkImage
+method getInputContext
+method getCursor
+method getInputVerifier
+method getComponent
+method inside
+method getTopLevelAncestor
+method requestDefaultFocus
+method mouseExit
+method getDebugGraphicsOptions
+method isPreferredSizeSet
+method getMousePosition
+method getComponentPopupMenu
+method firePropertyChange
+method getComponentCount
+method getToolTipText
+method getContainerListeners
+method hasFocus
+method getMousePosition
+method getAncestorListeners
+method paintImmediately
+method list
+method getClientProperty
+method keyUp
+method isLightweight
+method move
+method isLightweightComponent
+method getGraphicsConfiguration
+method isRequestFocusEnabled
+method getParent
+method equals
+method setFont
+method contains
+method getVetoableChangeListeners
+method getLocale
+method isCursorSet
+method mouseDrag
+method removePropertyChangeListener
+method getMaximumSize
+method insets
+method isOptimizedDrawingEnabled
+method putClientProperty
+method isValid
+method mouseEnter
+method setComponentOrientation
+method firePropertyChange
+method add
+method remove
+method getHierarchyListeners
+method lostFocus
+method getDefaultLocale
+method findComponentAt
+method addContainerListener
+method getMouseWheelListeners
+method requestFocus
+method setInputMap
+method createVolatileImage
+method getUIClassID
+method firePropertyChange
+method createVolatileImage
+method wait
+method addHierarchyBoundsListener
+method getVerifyInputWhenFocusTarget
+method removeAll
+method setFocusTraversalKeys
+method isValidateRoot
+method getComponentListeners
+method setCursor
+method firePropertyChange
+method setVisible
+method setBounds
+method setFocusable
+method isOpaque
+method getToolkit
+method getLocation
+method addNotify
+method addComponentListener
+method getAlignmentX
+method getAlignmentY
+method removeNotify
+method getName
+method removeAncestorListener
+method removeKeyListener
+method paintImmediately
+method setTransferHandler
+method isAncestorOf
+method getPropertyChangeListeners
+method location
+method enable
+method transferFocus
+method contains
+method show
+method getComponents
+method resize
+method getPropertyChangeListeners
+method list
+method getMouseMotionListeners
+method resize
+method getGraphics
+method isPaintingForPrint
+method isFocusCycleRoot
+method setFocusCycleRoot
+method removeMouseWheelListener
+method action
+method getHierarchyBoundsListeners
+method getBounds
+method getWidth
+method checkImage
+method getFontMetrics
+method getSize
+method add
+method notifyAll
+method printComponents
+method addKeyListener
+method setDropTarget
+method isPaintingTile
+method setInputVerifier
+method getInputMap
+method paint
+method requestFocusInWindow
+method list
+method repaint
+method isEnabled
+method transferFocusDownCycle
+method isFocusCycleRoot
+method getIgnoreRepaint
+method firePropertyChange
+method toString
+method list
+method setFocusTraversalKeysEnabled
+method getComponentOrientation
+method computeVisibleRect
+method getNextFocusableComponent
+method getForeground
+method prepareImage
+method show
+method preferredSize
+method getComponentZOrder
+method add
+method keyDown
+method getFocusTraversalKeysEnabled
+method removeHierarchyBoundsListener
+method add
+method isVisible
+method getSize
+method getFont
+method addAncestorListener
+method repaint
+method layout
+method notify
+method getRootPane
+method setEnabled
+method unregisterKeyboardAction
+method setBounds
+method repaint
+method firePropertyChange
+method getVisibleRect
+method getBaselineResizeBehavior
+method setSize
+method handleEvent
+method isFocusTraversable
+method setDefaultLocale
+method list
+method setAutoscrolls
+method getDropTarget
+method print
+method setNextFocusableComponent
+method addVetoableChangeListener
+method getBaseline
+method isDisplayable
+method getInputMap
+method getY
+method getX
+method getToolTipText
+method firePropertyChange
+
+JavaBean name: java.awt.Component
+bound property java.awt.Color background
+bound property boolean enabled
+bound property boolean focusable
+bound property java.awt.Font font
+bound property java.awt.Color foreground
+bound property java.lang.String name
+bound property boolean visible
+listener java.awt.event.MouseWheelListener
+  mouseWheelMoved
+listener java.awt.event.MouseListener
+  mouseClicked
+  mouseEntered
+  mouseExited
+  mousePressed
+  mouseReleased
+listener java.awt.event.MouseMotionListener
+  mouseDragged
+  mouseMoved
+listener java.awt.event.ComponentListener
+  componentHidden
+  componentMoved
+  componentResized
+  componentShown
+listener java.awt.event.HierarchyBoundsListener
+  ancestorMoved
+  ancestorResized
+listener java.awt.event.FocusListener
+  focusGained
+  focusLost
+listener java.awt.event.HierarchyListener
+  hierarchyChanged
+listener java.beans.PropertyChangeListener
+  propertyChange
+listener java.awt.event.InputMethodListener
+  caretPositionChanged
+  inputMethodTextChanged
+listener java.awt.event.KeyListener
+  keyPressed
+  keyReleased
+  keyTyped
+method removeFocusListener
+method getInputMethodRequests
+method setSize
+method addMouseMotionListener
+method hashCode
+method firePropertyChange
+method wait
+method isDoubleBuffered
+method getBounds
+method validate
+method imageUpdate
+method doLayout
+method setLocation
+method addMouseWheelListener
+method removeHierarchyListener
+method hide
+method nextFocus
+method addMouseListener
+method getComponentAt
+method removeInputMethodListener
+method addFocusListener
+method getBackground
+method removePropertyChangeListener
+method getLocationOnScreen
+method enable
+method enableInputMethods
+method getFocusCycleRootAncestor
+method addPropertyChangeListener
+method wait
+method requestFocus
+method isFocusable
+method revalidate
+method getFocusTraversalKeys
+method paintAll
+method getComponentAt
+method isShowing
+method minimumSize
+method getLocation
+method isFontSet
+method isForegroundSet
+method setMinimumSize
+method prepareImage
+method gotFocus
+method areFocusTraversalKeysSet
+method removeComponentListener
+method getClass
+method createImage
+method getPeer
+method removeMouseMotionListener
+method invalidate
+method isFocusOwner
+method getPreferredSize
+method printAll
+method removeMouseListener
+method getListeners
+method transferFocusBackward
+method isMinimumSizeSet
+method getKeyListeners
+method getInputMethodListeners
+method setIgnoreRepaint
+method getMouseListeners
+method transferFocusUpCycle
+method addPropertyChangeListener
+method setBackground
+method setLocale
+method getColorModel
+method setLocation
+method createImage
+method postEvent
+method mouseUp
+method size
+method bounds
+method repaint
+method mouseMove
+method repaint
+method isMaximumSizeSet
+method deliverEvent
+method setName
+method setMaximumSize
+method mouseDown
+method update
+method getAccessibleContext
+method isBackgroundSet
+method addInputMethodListener
+method reshape
+method getHeight
+method dispatchEvent
+method disable
+method getMinimumSize
+method locate
+method getFocusListeners
+method addHierarchyListener
+method applyComponentOrientation
+method setPreferredSize
+method getTreeLock
+method setForeground
+method checkImage
+method getInputContext
+method getCursor
+method inside
+method mouseExit
+method isPreferredSizeSet
+method getMousePosition
+method firePropertyChange
+method hasFocus
+method list
+method keyUp
+method isLightweight
+method move
+method getGraphicsConfiguration
+method getParent
+method equals
+method setFont
+method contains
+method getLocale
+method isCursorSet
+method mouseDrag
+method removePropertyChangeListener
+method getMaximumSize
+method list
+method isValid
+method mouseEnter
+method setComponentOrientation
+method remove
+method getHierarchyListeners
+method lostFocus
+method getMouseWheelListeners
+method createVolatileImage
+method createVolatileImage
+method wait
+method addHierarchyBoundsListener
+method setFocusTraversalKeys
+method setBounds
+method getComponentListeners
+method setCursor
+method firePropertyChange
+method setVisible
+method setFocusable
+method isOpaque
+method getToolkit
+method setBounds
+method getLocation
+method addNotify
+method addComponentListener
+method getAlignmentX
+method getAlignmentY
+method removeNotify
+method getName
+method removeKeyListener
+method getPropertyChangeListeners
+method location
+method enable
+method transferFocus
+method show
+method contains
+method resize
+method getPropertyChangeListeners
+method getMouseMotionListeners
+method resize
+method getGraphics
+method removeMouseWheelListener
+method getHierarchyBoundsListeners
+method action
+method getBounds
+method checkImage
+method getWidth
+method getSize
+method getFontMetrics
+method notifyAll
+method addKeyListener
+method setDropTarget
+method paint
+method list
+method requestFocusInWindow
+method isEnabled
+method isFocusCycleRoot
+method getIgnoreRepaint
+method toString
+method firePropertyChange
+method list
+method setFocusTraversalKeysEnabled
+method getComponentOrientation
+method getForeground
+method prepareImage
+method show
+method preferredSize
+method add
+method getFocusTraversalKeysEnabled
+method keyDown
+method removeHierarchyBoundsListener
+method getSize
+method isVisible
+method getFont
+method repaint
+method layout
+method notify
+method setEnabled
+method repaint
+method firePropertyChange
+method getBaselineResizeBehavior
+method setSize
+method handleEvent
+method isFocusTraversable
+method list
+method getDropTarget
+method print
+method getBaseline
+method isDisplayable
+method getY
+method getX
+method firePropertyChange
+
+JavaBean name: java.lang.Object
+readonly property java.lang.Class class
+method hashCode
+method wait
+method notifyAll
+method equals
+method wait
+method toString
+method notify
+method wait
+method getClass
